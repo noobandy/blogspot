@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-9 col-md-offset-3">
+        <form name="postForm" novalidate data-ng-submit="postForm.$valid && savePost()">
+            <legend data-ng-if="postId == 'new'">Add Post</legend>
+            <legend data-ng-if="postId != 'new'">Update Post</legend>
+            <div class="form-group">
+                <label class="col-md-4 control-label">
+                    Title
+                </label>
+                <div class="col-md-8" data-ng-class="{'has-error': postForm.title.$touched && postForm.title.$error.required}">
+                    <input class="form-control" type="text" name="title" ng-model="post.title" required>
+                           <span class="help-block">
+                               Post title is required
+                           </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">
+                    Content
+                </label>
+                <div class="col-md-8" data-ng-class="{'has-error': postForm.content.$touched && postForm.content.$error.required}">
+                    <textarea class="form-control"  name="content" ng-model="post.content" required>
+                        </textarea>
+                           <span class="help-block">
+                               Post content is required
+                           </span>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-8 col-md-offset-4">
+                    <a class="btn btn-primary" data-ui-sref="posts({blogId: blogId})">Cancel</a>
+                    <button class="btn btn-success" type="submit">Add Post</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

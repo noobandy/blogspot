@@ -1,0 +1,18 @@
+{
+	"server" : {
+		"host" : "localhost",
+		"port" : 3000
+	},
+	"jwt" : {
+		"secret" : "joinme260",
+		"algorithm" : "HS256"
+	},
+	"db" : {
+		"url" : "mongodb://localhost:27017/blogspot-dev",
+		"username" : "",
+		"password" : "",
+		"options" : {
+
+		}
+	}
+}
